@@ -60,7 +60,7 @@ def consumo_energia(aparelho, horas_por_dia):
 
     potencias = {
         "lampada(LED)": 12,
-        "ar-condicionado(1200BTU)": 1500,
+        "ar-condicionado(1200BTU)": 1200,
         "computador(desktop)": 300,
         "TV": 100,
         "notebook": 80,
@@ -231,6 +231,16 @@ while continuar.upper() == "S":
             # ============================
             # LÂMPADAS
             # ============================
+
+            print("\n=====================================")
+            print("Os aparelhos possuem valores aproximados: ")
+            print("-Lâmpada: 12W")
+            print("-Ar-Condicionado(12000BTU): 1200W")
+            print("-Computador(Desktop): 300W")
+            print("-TV: 100W")
+            print("-Notebook: 80W")
+            print("-Geladeira: 150W")
+            print("=====================================\n")
 
             qtd_lampadas = ler_inteiro_nao_negativo(
                 "Quantidade de lâmpadas LED: "
