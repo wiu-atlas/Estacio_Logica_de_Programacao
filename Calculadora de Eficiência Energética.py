@@ -2,128 +2,7 @@
 # ANÁLISE SIMPLES DE EFICIÊNCIA ENERGÉTICA
 # ==========================================
 
-# ================= FUNÇÕES PRINCIPAIS =================
-
-def ler_numero_positivo(mensagem):
-
-    while True:
-
-        try:
-            valor = float(input(mensagem))
-
-            if valor > 0:
-                return valor
-
-            else:
-                print("Digite um valor maior que 0.")
-
-        except ValueError:
-            print("Digite apenas números.")
-
-
-def ler_inteiro_positivo(mensagem):
-
-    while True:
-
-        try:
-            valor = int(input(mensagem))
-
-            if valor > 0:
-                return valor
-
-            else:
-                print("Digite um número inteiro maior que 0.")
-
-        except ValueError:
-            print("Digite apenas números inteiros válidos.")
-
-
-# Permite valor 0
-def ler_inteiro_nao_negativo(mensagem):
-
-    while True:
-
-        try:
-            valor = int(input(mensagem))
-
-            if valor >= 0:
-                return valor
-
-            else:
-                print("Digite um número maior ou igual a 0.")
-
-        except ValueError:
-            print("Digite apenas números inteiros válidos.")
-
-
-def consumo_energia(aparelho, horas_por_dia):
-
-    potencias = {
-        "lampada(LED)": 12,
-        "ar-condicionado(1200BTU)": 1200,
-        "computador(desktop)": 300,
-        "TV": 100,
-        "notebook": 80,
-        "geladeira": 150
-    }
-
-    if aparelho not in potencias:
-
-        print("Aparelho não encontrado.")
-        return 0
-
-    potencia = potencias[aparelho]
-
-    consumo = (
-        potencia * horas_por_dia * 30
-    ) / 1000
-
-    return consumo
-
-
-def classificar_eficiencia(indice):
-
-    if indice < 20:
-        return "Muito Eficiente"
-
-    elif indice < 40:
-        return "Eficiente"
-
-    elif indice < 60:
-        return "Regular"
-
-    else:
-        return "Ineficiente"
-
-
-def mostrar_recomendacao(classificacao):
-
-    print("\nRecomendações:")
-
-    if classificacao == "Muito Eficiente":
-
-        print(
-            "- Parabéns! O edifício apresenta ótimo desempenho energético."
-        )
-
-    elif classificacao == "Eficiente":
-
-        print("- Manter manutenção preventiva dos sistemas.")
-        print("- Continuar utilizando lâmpadas LED.")
-
-    elif classificacao == "Regular":
-
-        print("- Avaliar o uso de iluminação LED.")
-        print("- Verificar isolamento térmico.")
-        print("- Reduzir desperdícios de energia.")
-
-    else:
-
-        print("- Trocar lâmpadas comuns por LED.")
-        print("- Revisar o uso de ar-condicionado.")
-        print("- Melhorar isolamento térmico.")
-        print("- Fazer inspeção dos equipamentos elétricos.")
-
+import Function_Calc_Eficiencia
 
 # =================
 # CÓDIGO PRINCIPAL
@@ -148,11 +27,11 @@ while continuar.upper() == "S":
         "Digite o nome do edifício: "
     )
 
-    area = ler_numero_positivo(
+    area = Function_Calc_Eficiencia.ler_numero_positivo(
         "Digite a área do edifício em m²: "
     )
 
-    num_andares = ler_inteiro_positivo(
+    num_andares = Function_Calc_Eficiencia.ler_inteiro_positivo(
         "Digite o número de andares: "
     )
 
@@ -166,6 +45,9 @@ while continuar.upper() == "S":
 
     # CONTROLE MANUAL DOS ANDARES
     i = 1
+
+    # Voltar ao início
+    voltar_inicio = False
 
     while i <= num_andares:
 
@@ -204,11 +86,11 @@ while continuar.upper() == "S":
 
         if opcao == 0:
 
-            print(
-                "Voltando para o mesmo andar...\n"
-            )
+            print("Voltando ao início...\n")
 
-            continue
+            voltar_inicio = True
+            
+            break
 
         # ============================
         # OPÇÃO 1 - MANUAL
@@ -216,7 +98,7 @@ while continuar.upper() == "S":
 
         if opcao == 1:
 
-            consumo_andar = ler_numero_positivo(
+            consumo_andar = Function_Calc_Eficiencia.ler_numero_positivo(
                 f"Consumo do andar {i}: "
             )
 
@@ -242,17 +124,17 @@ while continuar.upper() == "S":
             print("-Geladeira: 150W")
             print("=====================================\n")
 
-            qtd_lampadas = ler_inteiro_nao_negativo(
+            qtd_lampadas = Function_Calc_Eficiencia.ler_inteiro_nao_negativo(
                 "Quantidade de lâmpadas LED: "
             )
 
             if qtd_lampadas > 0:
 
-                horas_lampadas = ler_numero_positivo(
+                horas_lampadas = Function_Calc_Eficiencia.ler_numero_positivo(
                     "Horas por dia das lâmpadas: "
                 )
 
-                consumo_andar += consumo_energia(
+                consumo_andar += Function_Calc_Eficiencia.consumo_energia(
                     "lampada(LED)",
                     horas_lampadas
                 ) * qtd_lampadas
@@ -261,17 +143,17 @@ while continuar.upper() == "S":
             # TVs
             # ============================
 
-            qtd_tv = ler_inteiro_nao_negativo(
+            qtd_tv = Function_Calc_Eficiencia.ler_inteiro_nao_negativo(
                 "Quantidade de TVs: "
             )
 
             if qtd_tv > 0:
 
-                horas_tv = ler_numero_positivo(
+                horas_tv = Function_Calc_Eficiencia.ler_numero_positivo(
                     "Horas por dia das TVs: "
                 )
 
-                consumo_andar += consumo_energia(
+                consumo_andar += Function_Calc_Eficiencia.consumo_energia(
                     "TV",
                     horas_tv
                 ) * qtd_tv
@@ -280,17 +162,17 @@ while continuar.upper() == "S":
             # COMPUTADORES
             # ============================
 
-            qtd_pc = ler_inteiro_nao_negativo(
+            qtd_pc = Function_Calc_Eficiencia.ler_inteiro_nao_negativo(
                 "Quantidade de computadores: "
             )
 
             if qtd_pc > 0:
 
-                horas_pc = ler_numero_positivo(
+                horas_pc = Function_Calc_Eficiencia.ler_numero_positivo(
                     "Horas por dia dos computadores: "
                 )
 
-                consumo_andar += consumo_energia(
+                consumo_andar += Function_Calc_Eficiencia.consumo_energia(
                     "computador(desktop)",
                     horas_pc
                 ) * qtd_pc
@@ -298,50 +180,53 @@ while continuar.upper() == "S":
             # ============================
             # Ar-Condicionado
             # ============================
-            qtd_ac = ler_inteiro_positivo(
+            qtd_ac = Function_Calc_Eficiencia.ler_inteiro_nao_negativo(
                 "Quantidade de ar-condicionados: "
             )
 
-            horas_ac = ler_numero_positivo(
-                "Horas por dia dos ar-condicionados: "
-            )
+            if qtd_ac > 0:
+                horas_ac = Function_Calc_Eficiencia.ler_numero_positivo(
+                    "Horas por dia dos ar-condicionados: "
+                )
 
-            consumo_andar += consumo_energia(
-                "ar-condicionado(1200BTU)",
-                horas_ac
-            ) * qtd_ac
+                consumo_andar += Function_Calc_Eficiencia.consumo_energia(
+                    "ar-condicionado(1200BTU)",
+                    horas_ac
+                ) * qtd_ac
 
             # ============================
             # Notebook
             # ============================
-            qtd_note = ler_inteiro_positivo(
+            qtd_note = Function_Calc_Eficiencia.ler_inteiro_nao_negativo(
                 "Quantidade de notebooks: "
             )
 
-            horas_note = ler_numero_positivo(
-                "Horas por dia dos notebooks: "
-            )
+            if qtd_note > 0:
+                horas_note = Function_Calc_Eficiencia.ler_numero_positivo(
+                    "Horas por dia dos notebooks: "
+                )
 
-            consumo_andar += consumo_energia(
-                "notebook",
-                horas_note
-            ) * qtd_note
+                consumo_andar += Function_Calc_Eficiencia.consumo_energia(
+                    "notebook",
+                    horas_note
+                ) * qtd_note
 
             # ============================
             # geladeira
             # ============================
-            qtd_gel = ler_inteiro_positivo(
+            qtd_gel = Function_Calc_Eficiencia.ler_inteiro_nao_negativo(
                 "Quantidade de geladeiras: "
             )
 
-            horas_gel = ler_numero_positivo(
-                "Horas por dia da geladeira: "
-            )
+            if qtd_gel > 0:
+                horas_gel = Function_Calc_Eficiencia.ler_numero_positivo(
+                    "Horas por dia da geladeira: "
+                )
 
-            consumo_andar += consumo_energia(
-                "geladeira",
-                horas_gel
-            ) * qtd_gel
+                consumo_andar += Function_Calc_Eficiencia.consumo_energia(
+                    "geladeira",
+                    horas_gel
+                ) * qtd_gel
 
         # ============================
         # SALVAR CONSUMO
@@ -358,9 +243,12 @@ while continuar.upper() == "S":
 
         i += 1 # Avança para o próximo andar
 
+    if voltar_inicio:
+        continue
+
     eficiencia = consumo_total / area
 
-    classificacao = classificar_eficiencia(
+    classificacao = Function_Calc_Eficiencia.classificar_eficiencia(
         eficiencia
     )
 
@@ -419,7 +307,7 @@ while continuar.upper() == "S":
             f"({menor_consumo:.2f} kWh)"
         )
 
-    mostrar_recomendacao(classificacao)
+    Function_Calc_Eficiencia.mostrar_recomendacao(classificacao)
 
     continuar = input(
         "\nDeseja rodar o programa novamente? (S/N): "
