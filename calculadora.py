@@ -1,7 +1,8 @@
-#calculadora para analise de eficiencia energetica de edificios
+#Calculadora para Análise de Eficiência Energética de Edifícios
+#Desenvolvido por: Wilson
 
 print("\nAnálise de Eficiência Energética de Edifícios")
-print("     Lógica de Programação - Estácio de Sá, 2026")
+print("         Lógica de Programação - Estácio de Sá, 2026")
 
 def analisar_eficiencia_energetica():
     print("Insira os dados do edifício para análise:")
@@ -45,10 +46,11 @@ elif climatizacao == 3:
 
 
 #Isolamento e Janelas
-print("\n\n6. Janelas e qualidade de isolamento: ")
-print("1 - Precário (janelas simples, sem isolamento)")
-print("2 - Bom (janelas duplas, isolamento moderado)")
-isolamento = int(input("Escolha entre as opções acima (1~2): "))
+print("\n\n6. Qualidade de isolamento e janelas: ")
+print("1 - Precária (janelas simples, sem isolamento)")
+print("2 - Decente (janelas duplas, isolamento mínimo)")
+print("3 - Boa (janelas duplas ou triplas, isolamento moderado)")
+isolamento = int(input("Escolha entre as opções acima (1~3): "))
 
 
 
