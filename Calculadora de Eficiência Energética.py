@@ -2,7 +2,11 @@
 # ANÁLISE SIMPLES DE EFICIÊNCIA ENERGÉTICA
 # ==========================================
 
+
+
 import Function_Calc_Eficiencia
+
+
 
 # =================
 # CÓDIGO PRINCIPAL
@@ -43,6 +47,8 @@ while continuar.upper() == "S":
         "de cada andar:\n"
     )
 
+
+
     # CONTROLE MANUAL DOS ANDARES
     i = 1
 
@@ -52,6 +58,8 @@ while continuar.upper() == "S":
     while i <= num_andares:
 
         print(f"\n===== Andar {i} =====")
+
+
 
         # ============================
         # MENU DE OPÇÕES
@@ -80,17 +88,23 @@ while continuar.upper() == "S":
             else:
                 print("Opção inválida.\n")
 
+
+
         # ============================
         # VOLTAR
         # ============================
 
         if opcao == 0:
 
-            print("Voltando ao início...\n")
+            if i > 1:
+                i -= 1 # Volta para o andar anterior
+                print("Voltando ao início...\n")
+            else:
+                print("Você já está no início.\n")
 
-            voltar_inicio = True
-            
-            break
+            continue
+
+
 
         # ============================
         # OPÇÃO 1 - MANUAL
@@ -102,6 +116,8 @@ while continuar.upper() == "S":
                 f"Consumo do andar {i}: "
             )
 
+
+
         # ============================
         # OPÇÃO 2 - APARELHOS
         # ============================
@@ -109,6 +125,8 @@ while continuar.upper() == "S":
         elif opcao == 2:
 
             consumo_andar = 0
+
+
 
             # ============================
             # LÂMPADAS
@@ -139,6 +157,8 @@ while continuar.upper() == "S":
                     horas_lampadas
                 ) * qtd_lampadas
 
+
+
             # ============================
             # TVs
             # ============================
@@ -157,6 +177,8 @@ while continuar.upper() == "S":
                     "TV",
                     horas_tv
                 ) * qtd_tv
+
+
 
             # ============================
             # COMPUTADORES
@@ -177,6 +199,8 @@ while continuar.upper() == "S":
                     horas_pc
                 ) * qtd_pc
 
+
+
             # ============================
             # Ar-Condicionado
             # ============================
@@ -193,6 +217,8 @@ while continuar.upper() == "S":
                     "ar-condicionado(1200BTU)",
                     horas_ac
                 ) * qtd_ac
+
+
 
             # ============================
             # Notebook
@@ -211,6 +237,8 @@ while continuar.upper() == "S":
                     horas_note
                 ) * qtd_note
 
+
+
             # ============================
             # geladeira
             # ============================
@@ -227,6 +255,8 @@ while continuar.upper() == "S":
                     "geladeira",
                     horas_gel
                 ) * qtd_gel
+
+
 
         # ============================
         # SALVAR CONSUMO
@@ -251,6 +281,8 @@ while continuar.upper() == "S":
     classificacao = Function_Calc_Eficiencia.classificar_eficiencia(
         eficiencia
     )
+
+
 
     # ============================
     # RELATÓRIO
