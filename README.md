@@ -1,10 +1,10 @@
-Grupo: Wilson Pombo(202602687542), Daniel Souza(202508172585), Luiz Felipe de Sousa(202603508803), André Lessa(202302233155), Ruan Assunção(202211393338)
+Grupo: Wilson Pombo(202602687542), Daniel Souza(202508172585), Luiz Felipe de Sousa(202603508803), André Lessa(202302233155), Ruan Assunção(202211393338).
 
-Matéria: Lógica de Programação
+Matéria: Lógica de Programação.
 
-Professor: Ralph
+Professor: Ralph Ansuattigui.
 
-Tema: Calculadora de Eficiência Energética
+Tema: Calculadora de Eficiência Energética.
 
 A Calculadora de Eficiência Energética é um projeto desenvolvido em Python para analisar o consumo de energia elétrica em edifícios.
 
