@@ -6,6 +6,8 @@ Professor: Ralph Ansuattigui.
 
 Tema: Calculadora de Eficiência Energética.
 
+Código: Calculadora de Eficiência Energética.py e Function_Calc_Eficiencia.py
+
 A Calculadora de Eficiência Energética é um projeto desenvolvido em Python para analisar o consumo de energia elétrica em edifícios.
 
 O sistema permite cadastrar informações como área do edifício, quantidade de andares e consumo energético de cada andar. 
