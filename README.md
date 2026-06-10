@@ -20,11 +20,11 @@ O programa solicita:
 >Consumo energético de cada andar.
 
 O consumo pode ser informado manualmente ou calculado automaticamente a partir da quantidade e tempo de uso de equipamentos como:
->Lâmpadas LED
->TVs
->Computadores
->Notebooks
->Geladeiras
->Ar-condicionados
+>Lâmpadas LED;
+>TVs;
+>Computadores;
+>Notebooks;
+>Geladeiras;
+>Ar-condicionados;
 
 Ao final, o sistema gera um relatório contendo o consumo total, índice de eficiência, classificação energética e recomendações.
