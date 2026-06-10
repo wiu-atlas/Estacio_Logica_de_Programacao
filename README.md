@@ -32,6 +32,7 @@ O consumo pode ser informado manualmente ou calculado automaticamente a partir d
 Ao final, o sistema gera um relatório contendo o consumo total, índice de eficiência, classificação energética e recomendações.
 
 Etapas:
+
 1ª: Iniciar o programa, selecione "S" para iniciar o programa;
 
 2ª: Nomeio o edifício. Exemplo: "Estácio";
