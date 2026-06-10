@@ -25,6 +25,6 @@ O consumo pode ser informado manualmente ou calculado automaticamente a partir d
 >Computadores;
 >Notebooks;
 >Geladeiras;
->Ar-condicionados;
+>Ar-condicionados.
 
 Ao final, o sistema gera um relatório contendo o consumo total, índice de eficiência, classificação energética e recomendações.
