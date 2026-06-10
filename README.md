@@ -32,15 +32,19 @@ O consumo pode ser informado manualmente ou calculado automaticamente a partir d
 Ao final, o sistema gera um relatório contendo o consumo total, índice de eficiência, classificação energética e recomendações.
 
 Etapas:
-1ª: 
-1ª
-1ª
-1ª
-1ª
-1ª
-1ª
-1ª
-1ª
-1ª
-1ª
-1ª
+1ª: Iniciar o programa, selecione "S" para iniciar o programa;
+
+2ª: Nomeio o edifício. Exemplo: "Estácio";
+
+3ª: Digite a área do edifício(m²). Ex: "400";
+
+4ª: Digite o número de andares: Ex: "4";
+
+5ª: Feito isso, virão as opções individuais, andar por andar. (Esse menu se repetirá baseado na quantidade de andares que você informou no programa.);
+
+6ª: Nesse menu, você poderá selecionar se quer informar o consumo manualmente ou se deseja calcular pelos aparelhos de cada andar.
+==> Caso deseje informar manualmente, você deverá informar o consumo completo de cada andar. Ex: 500 kWh;
+==> Caso deseje informar baseado em cada aparelho que possue por andar, deverá informar a quantidade de cada aparelho de cada andar e a quantidade de horas por dia que esses aparelhos são utilizados.
+
+Ao colocar todas essas informações, o programa retornará uma avaliação. Caso o consumo seja considerado bom, ele terá
+Após informar o consumo para cada andar, no final é enviado um relatório de acordo com o cálculo de efiência, se o usuário tiver selecionado para digitar o consumo total por andar manualmente o cálculo usado será a soma de todos os andares, se selecionar para descrever o consumo dos andares de acordo com os aparelhos o cálculo será (potência_de_cada_aparelho*horas_por_dia * 30)/1000. No relatório é mostrado a área total do edifício, quantidade de andares, consumo total do edifício, consumo de eficiência(consumo_total/área), classificação de eficiência e separando qual dos andares tem o menor e o maior consumo.
